@@ -25,17 +25,8 @@ exports.getJobById = async (req, res, next) => {
 
 exports.createJob = async (req, res, next) => {
   try {
-    const {
-      title,
-      company,
-      logo,
-      location,
-      category,
-      type,
-      salary,
-      description,
-      tags,
-    } = req.body;
+    const { title, company, logo, location, type, description, tags } =
+      req.body;
 
     if (!title || !company) {
       return res
@@ -48,9 +39,7 @@ exports.createJob = async (req, res, next) => {
       company,
       logo,
       location,
-      category,
       type,
-      salary,
       description,
       tags: tags || [],
     });
@@ -63,17 +52,8 @@ exports.createJob = async (req, res, next) => {
 
 exports.updateJob = async (req, res, next) => {
   try {
-    const {
-      title,
-      company,
-      logo,
-      location,
-      category,
-      type,
-      salary,
-      description,
-      tags,
-    } = req.body;
+    const { title, company, logo, location, type, description, tags } =
+      req.body;
     const job = await Job.findById(req.params.id);
 
     if (!job) {
@@ -85,9 +65,7 @@ exports.updateJob = async (req, res, next) => {
     if (company !== undefined) job.company = company;
     if (logo !== undefined) job.logo = logo;
     if (location !== undefined) job.location = location;
-    if (category !== undefined) job.category = category;
     if (type !== undefined) job.type = type;
-    if (salary !== undefined) job.salary = salary;
     if (description !== undefined) job.description = description;
     if (tags !== undefined) job.tags = tags;
 

@@ -48,5 +48,8 @@ desktop.ini
 .eslintcache
 
 # Temporary files
+
+# Vercel
+.vercel
 tmp/
 temp/
