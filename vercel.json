@@ -11,6 +11,5 @@
       "src": "/(.*)",
       "dest": "api/index.js"
     }
-  ],
-  "env": ["MONGO_URI", "JWT_SECRET", "BCRYPT_ROUNDS"]
+  ]
 }
